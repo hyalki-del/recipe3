@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kural Tabanlı Beslenme Planlama Motoru</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kişiselleştirilmiş Beslenme Planlayıcı</h1>
+        
+        <!-- Adım 1: Profil ve Kısıtlar -->
+        <section id="profile-section">
+            <h2>1. Profil ve Hedefler</h2>
+            <form id="profile-form">
+                <label>Yaş: <input type="number" id="age" value="35" required></label>
+                <label>Cinsiyet: 
+                    <select id="gender">
+                        <option value="male">Erkek</option>
+                        <option value="female">Kadın</option>
+                    </select>
+                </label>
+                <label>Boy (cm): <input type="number" id="height" value="175" required></label>
+                <label>Kilo (kg): <input type="number" id="weight" value="80" required></label>
+                <label>Aktivite Düzeyi: 
+                    <select id="activity">
+                        <option value="1.2">Hareketsiz (1.2)</option>
+                        <option value="1.375">Hafif Aktif (1.375)</option>
+                        <option value="1.55" selected>Orta Aktif (1.55)</option>
+                        <option value="1.725">Çok Aktif (1.725)</option>
+                    </select>
+                </label>
+                <label>Hedef: 
+                    <select id="goal">
+                        <option value="maintain">Kilo Koru</option>
+                        <option value="lose" selected>Kilo Ver (-500 kcal)</option>
+                        <option value="gain">Kilo Al (+500 kcal)</option>
+                    </select>
+                </label>
+                <button type="button" id="generate-btn">Planı Oluştur</button>
+            </form>
+        </section>
+
+        <!-- Adım 2: Günlük Plan Sonuçları -->
+        <section id="plan-section" style="display:none;">
+            <h2>2. Günlük Beslenme Planınız</h2>
+            <div id="summary-card">
+                <p><strong>Hedef Kalori:</strong> <span id="target-calories">0</span> kcal</p>
+                <p><strong>BMI:</strong> <span id="bmi-value">0</span> (<span id="bmi-status"></span>)</p>
+            </div>
+            
+            <div id="meals-container">
+                <!-- Öğünler dinamik olarak buraya eklenecek -->
+            </div>
+        </section>
+    </div>
+
+    <script src="js/nutrition.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/meal-planner.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
